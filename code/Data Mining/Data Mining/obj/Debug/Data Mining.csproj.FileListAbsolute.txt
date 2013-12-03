@@ -1,0 +1,10 @@
+c:\users\skorek\documents\visual studio 2012\Projects\Data Mining\Data Mining\bin\Debug\Data Mining.exe.config
+c:\users\skorek\documents\visual studio 2012\Projects\Data Mining\Data Mining\bin\Debug\Data Mining.exe
+c:\users\skorek\documents\visual studio 2012\Projects\Data Mining\Data Mining\bin\Debug\Data Mining.pdb
+c:\users\skorek\documents\visual studio 2012\Projects\Data Mining\Data Mining\obj\Debug\Data Mining.csprojResolveAssemblyReference.cache
+c:\users\skorek\documents\visual studio 2012\Projects\Data Mining\Data Mining\obj\Debug\Data_Mining.Properties.Resources.resources
+c:\users\skorek\documents\visual studio 2012\Projects\Data Mining\Data Mining\obj\Debug\Data Mining.csproj.GenerateResource.Cache
+c:\users\skorek\documents\visual studio 2012\Projects\Data Mining\Data Mining\obj\Debug\Data Mining.exe
+c:\users\skorek\documents\visual studio 2012\Projects\Data Mining\Data Mining\obj\Debug\Data Mining.pdb
+C:\Users\SkoreK\Documents\Visual Studio 2012\Projects\Data Mining\Data Mining\obj\Debug\Data_Mining.MainForm.resources
+C:\Users\SkoreK\Documents\Visual Studio 2012\Projects\Data Mining\Data Mining\obj\Debug\Data_Mining.ColumnSelector.resources
