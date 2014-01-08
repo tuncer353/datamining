@@ -10,7 +10,7 @@ namespace Data_Mining
     class Data
     {
         private List<Record> records;
-        private List<string> columnNames;
+        private List<String> columnNames;
         private string fileName;
         private string destination;
         private int columns;
@@ -277,9 +277,6 @@ namespace Data_Mining
             return new Data(destination, haveNames);
         }
         #endregion
-
-
-
 
 
     }

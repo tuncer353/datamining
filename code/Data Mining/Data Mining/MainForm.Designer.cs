@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 0D);
             this.fileListPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.fileListBox = new System.Windows.Forms.ListBox();
@@ -39,15 +44,21 @@
             this.addSelector = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataComparsionPanel = new System.Windows.Forms.Panel();
+            this.graphButton = new System.Windows.Forms.Button();
             this.compButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.graphSelectionPanel = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.fileListPanel.SuspendLayout();
             this.dataSelectionPanel.SuspendLayout();
             this.dataComparsionPanel.SuspendLayout();
             this.graphSelectionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // fileListPanel
@@ -89,6 +100,7 @@
             this.previewButton.TabIndex = 2;
             this.previewButton.Text = "P";
             this.previewButton.UseVisualStyleBackColor = true;
+            this.previewButton.Click += new System.EventHandler(this.previewButton_Click);
             // 
             // removeButton
             // 
@@ -98,6 +110,7 @@
             this.removeButton.TabIndex = 1;
             this.removeButton.Text = "-";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // addButton
             // 
@@ -107,6 +120,7 @@
             this.addButton.TabIndex = 0;
             this.addButton.Text = "+";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // dataSelectionPanel
             // 
@@ -152,6 +166,7 @@
             // dataComparsionPanel
             // 
             this.dataComparsionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dataComparsionPanel.Controls.Add(this.graphButton);
             this.dataComparsionPanel.Controls.Add(this.compButton);
             this.dataComparsionPanel.Controls.Add(this.label3);
             this.dataComparsionPanel.Controls.Add(this.checkedListBox1);
@@ -160,26 +175,38 @@
             this.dataComparsionPanel.Size = new System.Drawing.Size(330, 108);
             this.dataComparsionPanel.TabIndex = 2;
             // 
+            // graphButton
+            // 
+            this.graphButton.Location = new System.Drawing.Point(190, 28);
+            this.graphButton.Name = "graphButton";
+            this.graphButton.Size = new System.Drawing.Size(123, 45);
+            this.graphButton.TabIndex = 3;
+            this.graphButton.Text = "Draw Graph";
+            this.graphButton.UseVisualStyleBackColor = true;
+            this.graphButton.Click += new System.EventHandler(this.graphButton_Click);
+            // 
             // compButton
             // 
-            this.compButton.Location = new System.Drawing.Point(126, 28);
+            this.compButton.Location = new System.Drawing.Point(71, 28);
             this.compButton.Name = "compButton";
-            this.compButton.Size = new System.Drawing.Size(140, 45);
+            this.compButton.Size = new System.Drawing.Size(112, 45);
             this.compButton.TabIndex = 2;
             this.compButton.Text = "Compare";
             this.compButton.UseVisualStyleBackColor = true;
+            this.compButton.Click += new System.EventHandler(this.compButton_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "COMPARSION";
+            this.label3.Text = "OPERATIONS";
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "MAX",
@@ -194,20 +221,59 @@
             // graphSelectionPanel
             // 
             this.graphSelectionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.graphSelectionPanel.Controls.Add(this.chart1);
             this.graphSelectionPanel.Controls.Add(this.label4);
             this.graphSelectionPanel.Location = new System.Drawing.Point(277, 322);
             this.graphSelectionPanel.Name = "graphSelectionPanel";
             this.graphSelectionPanel.Size = new System.Drawing.Size(330, 233);
             this.graphSelectionPanel.TabIndex = 3;
             // 
+            // chart1
+            // 
+            chartArea2.AxisY.Maximum = 100D;
+            chartArea2.AxisY.Minimum = 0D;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.Location = new System.Drawing.Point(-1, 29);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.SystemColors.Window;
+            series2.MarkerBorderColor = System.Drawing.Color.Black;
+            series2.MarkerColor = System.Drawing.Color.Lime;
+            series2.MarkerImageTransparentColor = System.Drawing.Color.Lime;
+            series2.Name = "Series1";
+            dataPoint3.AxisLabel = "Memory";
+            dataPoint3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataPoint4.AxisLabel = "CPU";
+            series2.Points.Add(dataPoint3);
+            series2.Points.Add(dataPoint4);
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(326, 203);
+            this.chart1.TabIndex = 1;
+            this.chart1.Text = "chart1";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(0, -1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 0;
-            this.label4.Text = "GRAPH";
+            this.label4.Text = "RESOURCE USAGE";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "data";
+            this.openFileDialog.Filter = "Data files|*.txt";
+            this.openFileDialog.Multiselect = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainForm
             // 
@@ -218,6 +284,7 @@
             this.Controls.Add(this.dataComparsionPanel);
             this.Controls.Add(this.dataSelectionPanel);
             this.Controls.Add(this.fileListPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.Text = "Data Mining";
             this.fileListPanel.ResumeLayout(false);
@@ -228,6 +295,7 @@
             this.dataComparsionPanel.PerformLayout();
             this.graphSelectionPanel.ResumeLayout(false);
             this.graphSelectionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,6 +318,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button addSelector;
         private System.Windows.Forms.Button removeSelector;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button graphButton;
     }
 }
 

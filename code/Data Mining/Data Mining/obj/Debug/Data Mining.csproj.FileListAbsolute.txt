@@ -18,3 +18,16 @@ C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debu
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.exe
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.pdb
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.csprojResolveAssemblyReference.cache
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\bin\Debug\Data Mining.exe.config
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.exe
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.pdb
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\bin\Debug\Data Mining.exe
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\bin\Debug\Data Mining.pdb
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.csprojResolveAssemblyReference.cache
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.ColumnSelector.resources
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.MainForm.resources
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.Properties.Resources.resources
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.csproj.GenerateResource.Cache
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.GraphDialog.resources
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.FastPeakDialog.resources
+C:\Users\SkoreK\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.ComparsionDialog.resources

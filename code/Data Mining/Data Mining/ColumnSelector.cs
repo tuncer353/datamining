@@ -16,22 +16,34 @@ namespace Data_Mining
         {
             InitializeComponent();
             this.Location = position;
-            this.fileList.Items.AddRange((String [] )fileNames);
+            this.fileList.Items.AddRange(fileNames);
             this.Controls.Add(fileList);
         }
 
         private void fileList_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            ////TO DO
-            this.columnList.Items.AddRange(new String[] {"ta","asdas"});// to ma byc zczytane z pliku:)
-            ////
-            this.Controls.Add(columnList);
+            try
+            {
+
+                foreach (var item in fileList.Items)
+                {
+                    String destination = item.ToString();
+                    Object[] data = Data.CreateData(destination).ColumnNames.ToArray();
+                    columnList.Items.AddRange(data);
+                }
+                this.Controls.Add(columnList);
+            }
+            catch (NullReferenceException ex)
+            {
+
+            }
         }
 
         public String[] getSelectedValues(){
-            String[] selectedValues = new String[2];
-            selectedValues[0] = fileList.SelectedText;
-            selectedValues[1] = columnList.SelectedText;
+            String[] selectedValues = new String[3];
+            selectedValues[0] = fileList.Text;
+            selectedValues[1] = columnList.Text;
+            selectedValues[2] = fileList.Text;
             return selectedValues;
         }
 

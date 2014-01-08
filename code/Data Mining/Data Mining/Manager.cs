@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data_Mining
 {
-
-    class Results
+    public class Results
     {
         private double max;
         private double min;
@@ -43,7 +42,8 @@ namespace Data_Mining
             get { return avg; }
             set { avg = value; }
         }
-        public double Std {
+        public double Std
+        {
             get { return std; }
             set { std = value; }
         }

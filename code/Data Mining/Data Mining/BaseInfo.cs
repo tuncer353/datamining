@@ -11,6 +11,7 @@ namespace Data_Mining
         public string FileName { get; set; }
         public List<string> ColumnList { get; set; }
         public string Destination { get; set; }
+        public int RowCount { get; set; }
 
         public BaseInfo(Data data)
         {
@@ -19,10 +20,11 @@ namespace Data_Mining
                 FileName = data.FileName;
                 Destination = data.Destination;
                 ColumnList = data.ColumnNames;
+                RowCount = data.Rows;
             }
             else
             {
-                MessageBox.Show("incorrect file!");
+                MessageBox.Show("Incorrect file!");
 
             }
         }   
