@@ -17,3 +17,4 @@ C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debu
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.csproj.GenerateResource.Cache
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.exe
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.pdb
+C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.csprojResolveAssemblyReference.cache
