@@ -11,7 +11,6 @@ C:\Users\SkoreK\Documents\Visual Studio 2012\Projects\Data Mining\Data Mining\ob
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\bin\Debug\Data Mining.exe.config
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\bin\Debug\Data Mining.exe
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\bin\Debug\Data Mining.pdb
-C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data Mining.csprojResolveAssemblyReference.cache
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.ColumnSelector.resources
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.MainForm.resources
 C:\Users\Abdul\Documents\GitHub\datamining\code\Data Mining\Data Mining\obj\Debug\Data_Mining.Properties.Resources.resources
