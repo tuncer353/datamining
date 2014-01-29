@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using System.Windows.Forms;
 namespace Data_Mining
 {
@@ -52,7 +52,7 @@ namespace Data_Mining
         // --------------------------------------------------PRIVATE CONSTRUCTOR (to create an object use static function CreateData)
         private Data(string _destination, bool haveNames)
         {
-
+            
             records = new List<Record>();
 
             destination = _destination;
@@ -277,6 +277,79 @@ namespace Data_Mining
             return new Data(destination, haveNames);
         }
         #endregion
+
+
+        //------------------------------------------------STATIC FUNCTION
+        public static void saveFile(String path, List<String> colNames, List<List<Object>> data){
+
+            System.IO.StreamWriter sw = System.IO.File.CreateText(path);
+
+            foreach (Object name in colNames)
+            {
+                sw.Write(name + " ");
+            }
+
+            sw.Write("\n");
+
+            foreach (List<Object> rowData in data)
+            {
+                foreach (Object dat in rowData)
+                {
+                    sw.Write(dat);
+                    if (!dat.Equals(rowData.Last()))
+                    {
+                        sw.Write(" ");
+                    }
+                }
+                sw.Write("\n");
+            }
+
+            sw.Close();
+
+        }
+
+        public static Object[] formatData(List<Results> results, Boolean[] chosen)
+        {
+            Object[] Info = new Object[2];
+            List<List<Object>> data = new List<List<object>>();
+            List<String> headers = new List<String>();
+
+
+            for (int i = 0; i < results.Count; i++)
+            {
+                data.Add(new List<object>());
+
+                if (chosen[0])
+                {
+                    if (i == 0)
+                        headers.Add("Max");
+                    data.Last().Add(results.ElementAt(i).Max);
+                }
+                if (chosen[2])
+                {
+                    if (i == 0)
+                        headers.Add("Min");
+                    data.Last().Add(results.ElementAt(i).Min);
+                }
+                if (chosen[3])
+                {
+                    if (i == 0)
+                        headers.Add("std");
+                    data.Last().Add(results.ElementAt(i).Std);
+                }
+                if (chosen[3])
+                {
+                    if (i == 0)
+                        headers.Add("Mean");
+                    data.Last().Add(results.ElementAt(i).Avg);
+                }
+
+            }
+
+            Info[0] = headers;
+            Info[1] = data;
+            return Info;
+        }
 
 
     }

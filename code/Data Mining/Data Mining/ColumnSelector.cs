@@ -24,14 +24,23 @@ namespace Data_Mining
         {
             try
             {
-
-                foreach (var item in fileList.Items)
+                /*foreach (var item in fileList.Items)
                 {
                     String destination = item.ToString();
                     Object[] data = Data.CreateData(destination).ColumnNames.ToArray();
                     columnList.Items.AddRange(data);
-                }
+                }*/
+                /** Correction **/
+                String destination = this.fileList.SelectedItem.ToString();
+                Object[] data = Data.CreateData(destination).ColumnNames.ToArray();
+                columnList.Items.Clear();
+                columnList.Items.AddRange(data);
+                columnList.SelectedIndex = 0;
+                /**end new code*/
+
                 this.Controls.Add(columnList);
+
+
             }
             catch (NullReferenceException ex)
             {

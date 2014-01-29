@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 0D);
             this.fileListPanel = new System.Windows.Forms.Panel();
+            this.batchSel = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.fileListBox = new System.Windows.Forms.ListBox();
             this.previewButton = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.addSelector = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataComparsionPanel = new System.Windows.Forms.Panel();
+            this.XYGraphCheck = new System.Windows.Forms.CheckBox();
             this.graphButton = new System.Windows.Forms.Button();
             this.compButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,6 +56,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.diffCheck = new System.Windows.Forms.CheckBox();
             this.fileListPanel.SuspendLayout();
             this.dataSelectionPanel.SuspendLayout();
             this.dataComparsionPanel.SuspendLayout();
@@ -64,6 +67,7 @@
             // fileListPanel
             // 
             this.fileListPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fileListPanel.Controls.Add(this.batchSel);
             this.fileListPanel.Controls.Add(this.label1);
             this.fileListPanel.Controls.Add(this.fileListBox);
             this.fileListPanel.Controls.Add(this.previewButton);
@@ -73,6 +77,17 @@
             this.fileListPanel.Name = "fileListPanel";
             this.fileListPanel.Size = new System.Drawing.Size(262, 541);
             this.fileListPanel.TabIndex = 0;
+            // 
+            // batchSel
+            // 
+            this.batchSel.AutoSize = true;
+            this.batchSel.Location = new System.Drawing.Point(7, 17);
+            this.batchSel.Name = "batchSel";
+            this.batchSel.Size = new System.Drawing.Size(95, 17);
+            this.batchSel.TabIndex = 5;
+            this.batchSel.Text = "Batch Process";
+            this.batchSel.UseVisualStyleBackColor = true;
+            this.batchSel.CheckedChanged += new System.EventHandler(this.bachSel_CheckedChanged);
             // 
             // label1
             // 
@@ -131,7 +146,7 @@
             this.dataSelectionPanel.Controls.Add(this.label2);
             this.dataSelectionPanel.Location = new System.Drawing.Point(277, 14);
             this.dataSelectionPanel.Name = "dataSelectionPanel";
-            this.dataSelectionPanel.Size = new System.Drawing.Size(330, 188);
+            this.dataSelectionPanel.Size = new System.Drawing.Size(355, 188);
             this.dataSelectionPanel.TabIndex = 1;
             // 
             // removeSelector
@@ -166,20 +181,32 @@
             // dataComparsionPanel
             // 
             this.dataComparsionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dataComparsionPanel.Controls.Add(this.diffCheck);
+            this.dataComparsionPanel.Controls.Add(this.XYGraphCheck);
             this.dataComparsionPanel.Controls.Add(this.graphButton);
             this.dataComparsionPanel.Controls.Add(this.compButton);
             this.dataComparsionPanel.Controls.Add(this.label3);
             this.dataComparsionPanel.Controls.Add(this.checkedListBox1);
             this.dataComparsionPanel.Location = new System.Drawing.Point(277, 208);
             this.dataComparsionPanel.Name = "dataComparsionPanel";
-            this.dataComparsionPanel.Size = new System.Drawing.Size(330, 108);
+            this.dataComparsionPanel.Size = new System.Drawing.Size(355, 108);
             this.dataComparsionPanel.TabIndex = 2;
+            // 
+            // XYGraphCheck
+            // 
+            this.XYGraphCheck.AutoSize = true;
+            this.XYGraphCheck.Location = new System.Drawing.Point(220, 79);
+            this.XYGraphCheck.Name = "XYGraphCheck";
+            this.XYGraphCheck.Size = new System.Drawing.Size(110, 17);
+            this.XYGraphCheck.TabIndex = 4;
+            this.XYGraphCheck.Text = "X-Y First two cols.";
+            this.XYGraphCheck.UseVisualStyleBackColor = true;
             // 
             // graphButton
             // 
-            this.graphButton.Location = new System.Drawing.Point(190, 28);
+            this.graphButton.Location = new System.Drawing.Point(220, 28);
             this.graphButton.Name = "graphButton";
-            this.graphButton.Size = new System.Drawing.Size(123, 45);
+            this.graphButton.Size = new System.Drawing.Size(125, 45);
             this.graphButton.TabIndex = 3;
             this.graphButton.Text = "Draw Graph";
             this.graphButton.UseVisualStyleBackColor = true;
@@ -187,9 +214,9 @@
             // 
             // compButton
             // 
-            this.compButton.Location = new System.Drawing.Point(71, 28);
+            this.compButton.Location = new System.Drawing.Point(72, 28);
             this.compButton.Name = "compButton";
-            this.compButton.Size = new System.Drawing.Size(112, 45);
+            this.compButton.Size = new System.Drawing.Size(125, 45);
             this.compButton.TabIndex = 2;
             this.compButton.Text = "Compare";
             this.compButton.UseVisualStyleBackColor = true;
@@ -225,39 +252,39 @@
             this.graphSelectionPanel.Controls.Add(this.label4);
             this.graphSelectionPanel.Location = new System.Drawing.Point(277, 322);
             this.graphSelectionPanel.Name = "graphSelectionPanel";
-            this.graphSelectionPanel.Size = new System.Drawing.Size(330, 233);
+            this.graphSelectionPanel.Size = new System.Drawing.Size(355, 233);
             this.graphSelectionPanel.TabIndex = 3;
             // 
             // chart1
             // 
-            chartArea2.AxisY.Maximum = 100D;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.AxisY.Maximum = 100D;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(-1, 29);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.SystemColors.Window;
-            series2.MarkerBorderColor = System.Drawing.Color.Black;
-            series2.MarkerColor = System.Drawing.Color.Lime;
-            series2.MarkerImageTransparentColor = System.Drawing.Color.Lime;
-            series2.Name = "Series1";
-            dataPoint3.AxisLabel = "Memory";
-            dataPoint3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataPoint4.AxisLabel = "CPU";
-            series2.Points.Add(dataPoint3);
-            series2.Points.Add(dataPoint4);
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(326, 203);
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.SystemColors.Window;
+            series1.MarkerBorderColor = System.Drawing.Color.Black;
+            series1.MarkerColor = System.Drawing.Color.Lime;
+            series1.MarkerImageTransparentColor = System.Drawing.Color.Lime;
+            series1.Name = "Series1";
+            dataPoint1.AxisLabel = "Memory";
+            dataPoint1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataPoint2.AxisLabel = "CPU";
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(351, 203);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, -1);
+            this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 0;
@@ -265,9 +292,9 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "data";
             this.openFileDialog.Filter = "Data files|*.txt";
             this.openFileDialog.Multiselect = true;
+            this.openFileDialog.Title = "Open file";
             // 
             // timer1
             // 
@@ -275,11 +302,21 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // diffCheck
+            // 
+            this.diffCheck.AutoSize = true;
+            this.diffCheck.Location = new System.Drawing.Point(72, 80);
+            this.diffCheck.Name = "diffCheck";
+            this.diffCheck.Size = new System.Drawing.Size(121, 17);
+            this.diffCheck.TabIndex = 5;
+            this.diffCheck.Text = "Differ. First two cols.";
+            this.diffCheck.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 574);
+            this.ClientSize = new System.Drawing.Size(644, 574);
             this.Controls.Add(this.graphSelectionPanel);
             this.Controls.Add(this.dataComparsionPanel);
             this.Controls.Add(this.dataSelectionPanel);
@@ -323,6 +360,9 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button graphButton;
+        private System.Windows.Forms.CheckBox XYGraphCheck;
+        private System.Windows.Forms.CheckBox batchSel;
+        private System.Windows.Forms.CheckBox diffCheck;
     }
 }
 

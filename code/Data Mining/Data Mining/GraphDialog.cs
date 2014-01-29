@@ -31,5 +31,64 @@ namespace Data_Mining
 
         }
 
+        public GraphDialog(ColumnSelector xList, ColumnSelector yList)
+        {
+            InitializeComponent();
+            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+
+            double[] X = Manager.prepareColumn(xList.getSelectedValues()[2], xList.getSelectedValues()[1]).ToArray();
+            double[] Y = Manager.prepareColumn(yList.getSelectedValues()[2], yList.getSelectedValues()[1]).ToArray();
+
+            if (X.Length != Y.Length)
+            {
+                MessageBox.Show("The size of selected columns mismatch", "?!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Series series = chart1.Series.Add(yList.getSelectedValues()[1]);
+                
+            for (int i = 0; i < X.Length; i++)
+            {
+                series.Points.AddXY(X[i], Y[i]);
+            }
+                
+            series.ChartType = SeriesChartType.Line;
+            
+
+        }
+
+        public GraphDialog(ColumnSelector xList, ColumnSelector yList, Boolean sort)
+        {
+            InitializeComponent();
+            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+
+            double[] X = Manager.prepareColumn(xList.getSelectedValues()[2], xList.getSelectedValues()[1]).ToArray();
+            double[] Y = Manager.prepareColumn(yList.getSelectedValues()[2], yList.getSelectedValues()[1]).ToArray();
+
+            if (X.Length != Y.Length)
+            {
+                MessageBox.Show("The size of selected columns mismatch", "?!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Series series = chart1.Series.Add(yList.getSelectedValues()[1]);
+
+            if (sort)
+            {
+                List<double> aux = X.ToList();
+                aux.Sort();
+                X = aux.ToArray();
+            }
+
+            for (int i = 0; i < X.Length; i++)
+            {
+                series.Points.AddXY(X[i], Y[i]);
+            }
+
+            series.ChartType = SeriesChartType.Line;
+
+
+        }
+
     }
 }

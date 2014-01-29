@@ -33,6 +33,7 @@ namespace Data_Mining
                 entity.Add(_record[i]);
             }
         }
+
         #endregion
 
 

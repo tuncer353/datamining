@@ -1,0 +1,49 @@
+File	Column	Time
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\short.txt	column1	04:06:51 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\short.txt	column2	04:07:14 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	column2	04:09:25 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\big.txt	big.txt_column1	04:10:05 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\big.txt	big.txt_column2	04:10:05 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\big.txt	big.txt_column3	04:10:05 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\big.txt	big.txt_column4		04:10:05 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\data1.txt	data1.txt_column1	04:10:05 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\data1.txt	data1.txt_column2	04:10:05 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\data1.txt	data1.txt_column3	04:10:05 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Documents\SE-Polonia\Project\datamining-gh-pages\TestData\data1.txt	data1.txt_column4	04:10:05 a.m.miércoles, 29 de enero de 2014
+
+C:\Users\Sokka\Desktop\TestData\short.txt	column1	04:35:10 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	column2	04:35:11 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	column1	04:36:07 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	column2	04:36:07 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\big.txt	big.txt_column1	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\big.txt	big.txt_column2	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\big.txt	big.txt_column3	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\big.txt	big.txt_column4		04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\data1.txt	data1.txt_column1	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\data1.txt	data1.txt_column2	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\data1.txt	data1.txt_column3	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\data1.txt	data1.txt_column4	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\data1.txt	data1.txt_column5	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\medium.txt	medium.txt_Column1	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\medium.txt	medium.txt_Column2	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\medium.txt	medium.txt_Column3	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\medium.txt	medium.txt_Column4	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column1	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column2	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column3	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column4		04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\test2.txt	test2.txt_MAX	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\test2.txt	test2.txt_MIN	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\test2.txt	test2.txt_STD	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\total.txt	total.txt_MAX	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\total.txt	total.txt_MIN	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\total.txt	total.txt_STD	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\total.txt	total.txt_MEAN	04:36:44 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column1	04:38:31 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column2	04:38:31 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column3	04:38:31 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column4		04:38:31 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column1	04:40:00 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column2	04:40:00 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column3	04:40:00 a.m.miércoles, 29 de enero de 2014
+C:\Users\Sokka\Desktop\TestData\short.txt	short.txt_column4		04:40:00 a.m.miércoles, 29 de enero de 2014

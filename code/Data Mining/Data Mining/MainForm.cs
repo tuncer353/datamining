@@ -67,15 +67,38 @@ namespace Data_Mining
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            openFileDialog.ShowDialog();
-            listOfFiles = openFileDialog.FileNames;
-            fileListBox.Items.AddRange(listOfFiles);
+            DialogResult status;
+            if (this.batchSel.Checked)
+            {
+                status = this.folderBrowserDialog1.ShowDialog();
+                if (status == DialogResult.OK)
+                {
+                    this.fileListBox.Items.Add(folderBrowserDialog1.SelectedPath);
+                }
+
+            }
+            else
+            {
+                status = openFileDialog.ShowDialog();
+                if (status == DialogResult.OK)
+                {
+                    listOfFiles = openFileDialog.FileNames;
+                    fileListBox.Items.AddRange(listOfFiles);
+                }
+            }
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            fileListBox.Items.Remove(fileListBox.SelectedItem);
-            fileListBox.Refresh();
+            if (this.batchSel.Checked)
+            {
+
+            }
+            else
+            {
+                fileListBox.Items.Remove(fileListBox.SelectedItem);
+                fileListBox.Refresh();
+            }
         }
         private PerformanceCounter theCPUCounter =
             new PerformanceCounter("Processor", "% Processor Time", "_Total");
@@ -100,7 +123,17 @@ namespace Data_Mining
 
         private void graphButton_Click(object sender, EventArgs e)
         {
-            GraphDialog g = new GraphDialog(columnSelectorList.ToList<ColumnSelector>());
+            GraphDialog g;
+            if (this.XYGraphCheck.Checked && columnSelectorList.Count() >= 2)
+            { 
+                g = new GraphDialog(columnSelectorList.ToList<ColumnSelector>().ElementAt(0),
+                    columnSelectorList.ToList<ColumnSelector>().ElementAt(1), true); 
+            }
+            else
+            {
+                g = new GraphDialog(columnSelectorList.ToList<ColumnSelector>());
+            }
+            
             Form graph = new Form();
             graph.Controls.Add(g);
             graph.Refresh();
@@ -116,16 +149,53 @@ namespace Data_Mining
 
         private void compButton_Click(object sender, EventArgs e)
         {
-            List<Results> results = Manager.Compare(columnSelectorList.ToList<ColumnSelector>());
+            List<Results> results;
+            bool measuSel = false;
             bool[] choices = new bool[4];
 
+            if (this.fileListBox.SelectedItems.Count == 0 || (this.columnSelectorList.Count == 0 && !this.batchSel.Checked))
+            {
+                MessageBox.Show("Select the file or folder to be analyzed!", "?!", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            
             for (int i = 0; i < choices.Length; i++)
             {
                 choices[i] = checkedListBox1.GetItemChecked(i);
+                measuSel |= choices[i];
             }
 
-            ComparsionDialog cd = new ComparsionDialog(results, choices);
-            cd.Show();
+            if (!measuSel)
+            {
+                MessageBox.Show("Must be selected at least one measure!", "?!", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+            if(this.batchSel.Checked){
+                results = Manager.Compare(this.fileListBox.SelectedItems.Cast<String>().ToList(), this.diffCheck.Checked);
+
+            }
+            else{
+                results = Manager.Compare(columnSelectorList.ToList<ColumnSelector>(), this.diffCheck.Checked);
+            }
+
+            if (results != null)
+            {
+                ComparsionDialog cd = new ComparsionDialog(results, choices);
+                cd.Show();
+            }
+        }
+
+        private void bachSel_CheckedChanged(object sender, EventArgs e)
+        {
+            this.addSelector.Enabled = !this.batchSel.Checked;
+            this.removeSelector.Enabled = !this.batchSel.Checked;
+            this.graphButton.Enabled = !this.batchSel.Checked;
+            this.XYGraphCheck.Enabled = !this.batchSel.Checked;
+            
         }
     }
 }
