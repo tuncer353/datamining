@@ -16,7 +16,6 @@
  
  :openTool
  if exist "%3" (
-     echo pasaste el/los parametro/s %*
 	 call "Data Mining.exe" %*
  ) else (
      echo Input and Output files must be defined.
